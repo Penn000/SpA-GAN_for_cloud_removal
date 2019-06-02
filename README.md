@@ -6,13 +6,13 @@
 
 See `./models/gen/SPANet.py` for more details.
 
-![SPANet](D:/Heng/Documents/workspace/SpA-GAN_for_cloud_removal/readme_images/SPANet.jpg)
+![SPANet](./readme_images/SPANet.jpg)
 
 **Discriminator**
 
 Discriminator is a fully  CNN that **C** is convolution layer, **B** is batch normalization and **R** is Leaky ReLU. See `./models/dis/dis.py` for more details.
 
-![dis](D:/Heng/Documents/workspace/SpA-GAN_for_cloud_removal/readme_images/dis.jpg)
+![dis](./readme_images/dis.jpg)
 
 **Loss**
 
