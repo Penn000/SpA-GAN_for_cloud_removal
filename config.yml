@@ -1,6 +1,6 @@
 
 # folder path of dataset, which includes 2 subfolders: cloud/ and ground_truth/
-datasets_dir: ../data/RICE_DATASET/RICE1/
+datasets_dir: ./data/RICE_DATASET/RICE1/
 train_list: train_list.txt
 test_list: test_list.txt
 out_dir: results
