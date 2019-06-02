@@ -40,14 +40,14 @@ Click [here](https://github.com/BUPTLdy/RICE_DATASET) to download the open sourc
 ./
 +-- data
     +--	RICE_DATASET
-        +--	RICE1
+        +-- RICE1
         |   +-- cloudy_image
         |   |   +-- 0.png
         |   |   +-- ...
         |   +-- ground_truth
         |       +-- 0.png
         |       +-- ...
-        +--	RICE2
+        +-- RICE2
             +-- cloudy_image
             |   +-- 0.png
             |   +-- ...
