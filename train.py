@@ -166,7 +166,7 @@ def train(config):
 
 
 if __name__ == '__main__':
-    with open('config.yml', 'r') as f:
+    with open('config.yml', 'r', encoding='UTF-8') as f:
         config = yaml.load(f)
     config = AttrMap(config)
 

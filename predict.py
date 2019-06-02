@@ -69,7 +69,7 @@ if __name__ == '__main__':
     parser.add_argument('--manualSeed', type=int, default=0)
     args = parser.parse_args()
 
-    with open(args.config, 'r', encoding='utf-8') as f:
+    with open(args.config, 'r', encoding='UTF-8') as f:
         config = yaml.load(f)
     config = AttrMap(config)
 

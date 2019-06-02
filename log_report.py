@@ -14,7 +14,7 @@ class LogReport():
 
     def __call__(self, log):
         self.log_.append(log)
-        with open(os.path.join(self.log_dir, self.log_name), 'w') as f:
+        with open(os.path.join(self.log_dir, self.log_name), 'w', encoding='UTF-8') as f:
             json.dump(self.log_, f, indent=4)
     
     def save_lossgraph(self):
@@ -52,7 +52,7 @@ class TestReport():
 
     def __call__(self, log):
         self.log_.append(log)
-        with open(os.path.join(self.log_dir, self.log_name), 'w') as f:
+        with open(os.path.join(self.log_dir, self.log_name), 'w', encoding='UTF-8') as f:
             json.dump(self.log_, f, indent=4)
     
     def save_lossgraph(self):

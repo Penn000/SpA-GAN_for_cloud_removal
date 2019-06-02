@@ -54,15 +54,15 @@ def checkpoint(config, epoch, gen, dis):
 def make_manager():
     if not os.path.exists('.job'):
         os.makedirs('.job')
-        with open('.job/job.txt', 'w') as f:
+        with open('.job/job.txt', 'w', encoding='UTF-8') as f:
             f.write('0')
 
 
 def job_increment():
-    with open('.job/job.txt', 'r') as f:
+    with open('.job/job.txt', 'r', encoding='UTF-8') as f:
         n_job = f.read()
         n_job = int(n_job)
-    with open('.job/job.txt', 'w') as f:
+    with open('.job/job.txt', 'w', encoding='UTF-8') as f:
         f.write(str(n_job + 1))
     
     return n_job
