@@ -47,10 +47,10 @@ def predict(config, args):
             x_ = x.cpu().numpy()[0]
             out_ = out.cpu().numpy()[0]
             in_rgb = x_[:3]
-            out_rgb = np.clip(out_[:3], -1, 1)
+            out_rgb = np.clip(out_[:3], 0, 1)
             
-            allim[0, 0, :] = in_rgb * 127.5 + 127.5
-            allim[0, 1, :] = out_rgb * 127.5 + 127.5
+            allim[0, 0, :] = in_rgb * 255
+            allim[0, 1, :] = out_rgb * 255
             allim[0, 2, :] = att.cpu().numpy()[0]
             allim = allim.transpose(0, 3, 1, 4, 2)
             allim = allim.reshape((h*p, w*p, c))
