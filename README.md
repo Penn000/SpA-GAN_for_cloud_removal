@@ -22,11 +22,15 @@ The total loss of *SpA GAN* is formulated as fellow:
 
 ![loss_spa-gan](./readme_images/loss_spagan.png)
 
-and
+the first part is the loss of GAN
 
 ![loss_cgan](./readme_images/loss_cgan.png)
 
+the second part is standard $L_1$ loss where $\lambda_c$ is a hyper parameter to control the weight of each channel to the loss.
+
 ![loss_l1](./readme_images/loss_l1.png)
+
+the third part is attention loss where $A$ is the attention map and $M$ is the mask of cloud.
 
 ![loss_att](./readme_images/loss_att.png)
 
@@ -76,16 +80,53 @@ python predict.py --config <path_to_config.yml_in_the_out_dir> --test_dir <path_
 
 There're my pre-trained models on [RICE1](./pretrained_models/RICE1/)(`./pretrained_models/RICE1/gen_model_epoch_200.pth`) and [RICE2]((./pretrained_models/RICE1/))(`./pretrained_models/RICE2/gen_model_epoch_200.pth`).
 
-## 5. RESULTS
-
 Some results are shown as bellow and the images from left to right are: cloudy image, attention map, SpA GAN's output, ground truth.
 
 ![test_0000](./readme_images/test_0000.png)
 
 ![test_0026](./readme_images/test_0026.png)
 
+## 5. Experiments
+
+In this section, I compares *SpA GAN* with *conditional GAN* and *cycle GAN* using peak signal to noise ratio (***PSNR***) and structural similarity index (***SSIM***) as metrics on datasets RICE1 and RICE2.
+
+### 5.1 RICE1
+
+**qualitative analysis**
+
+The result are shown as bellow and the images from left to right are: cloudy image, conditional GAN's output, cycle GAN's output , SpA GAN's output, ground truth.
+
+![rice1-result](./readme_images/rice1_result.png)
+
+**quantitative analysis**
+
+|               |  PSNR  | SSIM  |
+| :-----------: | :----: | :---: |
+|   **cGAN**    | 26.547 | 0.903 |
+| **cycle GAN** | 25.880 | 0.893 |
+|  **SpA GAN**  | 30.232 | 0.954 |
+
+### 5.1 RICE2
+
+**qualitative analysis**
+
+The result are shown as bellow and the images from left to right are: cloudy image, conditional GAN's output, cycle GAN's output , SpA GAN's output, ground truth.
+
+![rice2-result](./readme_images/rice2_result.png)
+
+**quantitative analysis**
+
+|               |  PSNR  | SSIM  |
+| :-----------: | :----: | :---: |
+|   **cGAN**    | 25.384 | 0.811 |
+| **cycle GAN** | 23.910 | 0.793 |
+|  **SpA GAN**  | 28.368 | 0.906 |
+
 ## 6. CONTACT
 
 Contact me if you have any questions about the code and its execution.
 
 E-mail: penn000@foxmail.com
+
+- Note: because the paper of this work is not yet released, if you think this work is helpful for your research, give me a star :-D
+
