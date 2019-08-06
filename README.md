@@ -1,3 +1,5 @@
+<img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/Penn000/SpA-GAN_for_cloud_removal?color=green"><img alt="GitHub issues" src="https://img.shields.io/github/issues/Penn000/SpA-GAN_for_cloud_removal"><img alt="GitHub closed issues" src="https://img.shields.io/github/issues-closed/Penn000/SpA-GAN_for_cloud_removal?color=red"><img alt="GitHub top language" src="https://img.shields.io/github/languages/top/Penn000/SpA-GAN_for_cloud_removal"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Penn000/SpA-GAN_for_cloud_removal?style=social">
+
 # *SpA GAN* for cloud removal
 
 ## 1. INTRODUCTION
