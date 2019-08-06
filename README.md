@@ -1,6 +1,15 @@
-# *SpA GAN* for cloud removal
+<div align="center">
+<h1>SpA GAN for Cloud Removal</h1>
+</div>
 
-<img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/Penn000/SpA-GAN_for_cloud_removal?color=green"> <img alt="GitHub issues" src="https://img.shields.io/github/issues/Penn000/SpA-GAN_for_cloud_removal"> <img alt="GitHub closed issues" src="https://img.shields.io/github/issues-closed/Penn000/SpA-GAN_for_cloud_removal?color=red"> <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/Penn000/SpA-GAN_for_cloud_removal"> <img alt="GitHub stars" src="https://img.shields.io/github/stars/Penn000/SpA-GAN_for_cloud_removal?style=social">
+<div align="center">
+<img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/Penn000/SpA-GAN_for_cloud_removal?color=green"> <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/Penn000/SpA-GAN_for_cloud_removal">  <img alt="GitHub issues" src="https://img.shields.io/github/issues/Penn000/SpA-GAN_for_cloud_removal"> <img alt="GitHub closed issues" src="https://img.shields.io/github/issues-closed/Penn000/SpA-GAN_for_cloud_removal?color=red">
+</div>
+<div align="center">
+<img alt="GitHub watchers" src="https://img.shields.io/github/watchers/Penn000/SpA-GAN_for_cloud_removal?style=social"> <img alt="GitHub stars" src="https://img.shields.io/github/stars/Penn000/SpA-GAN_for_cloud_removal?style=social"> <img alt="GitHub forks" src="https://img.shields.io/github/forks/Penn000/SpA-GAN_for_cloud_removal?style=social">
+</div>
+
+
 
 ## 1. INTRODUCTION
 
@@ -88,7 +97,7 @@ Some results are shown as bellow and the images from left to right are: cloudy i
 
 ![test_0026](./readme_images/test_0026.png)
 
-## 5. Experiments
+## 5. EXPERIMENTS
 
 In this section, I compares *SpA GAN* with *conditional GAN* and *cycle GAN* using peak signal to noise ratio (***PSNR***) and structural similarity index (***SSIM***) as metrics on datasets RICE1 and RICE2.
 
