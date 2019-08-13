@@ -20,25 +20,31 @@ This is the source code of my graduation thesis named ***Cloud Removal for High-
 *SpA GAN* uses *spatial attention networks* an generator. See `./models/gen/SPANet.py` for more details.
 
 <div align="center"><img src="./readme_images/SPANet.jpg"></div>
+
 - **Discriminator**
 
 Discriminator is a fully  CNN that **C** is convolution layer, **B** is batch normalization and **R** is Leaky ReLU. See `./models/dis/dis.py` for more details.
 
 <div align="center"><img src="./readme_images/dis.jpg"></div>
+
 - **Loss**
 
 The total loss of *SpA GAN* is formulated as fellow:
 
 <div align="center"><img src="./readme_images/loss_spagan.png"></div>
+
 the first part is the loss of GAN
 
 <div align="center"><img src="./readme_images/loss_cgan.png"></div>
+
 the second part is standard $L_1$ loss where $\lambda_c$ is a hyper parameter to control the weight of each channel to the loss.
 
 <div align="center"><img src="./readme_images/loss_l1.png"></div>
+
 the third part is attention loss where $A$ is the attention map and $M$ is the mask of cloud.
 
 <div align="center"><img src="./readme_images/loss_att.png"></div>
+
 ## 2. DATASET
 
 ### 2.1. RICE_DATASET
@@ -88,7 +94,9 @@ There're my pre-trained models on [RICE1](./pretrained_models/RICE1/)(`./pretrai
 Some results are shown as bellow and the images from left to right are: cloudy image, attention map, SpA GAN's output, ground truth.
 
 <div align="center"><img src="./readme_images/test_0000.png"></div>
+
 <div align="center"><img src="./readme_images/test_0026.png"></div>
+
 ## 5. EXPERIMENTS
 
 In this section, I compares *SpA GAN* with *conditional GAN* and *cycle GAN* using peak signal to noise ratio (***PSNR***) and structural similarity index (***SSIM***) as metrics on datasets RICE1 and RICE2.
@@ -100,6 +108,7 @@ In this section, I compares *SpA GAN* with *conditional GAN* and *cycle GAN* usi
 The result are shown as bellow and the images from left to right are: cloudy image, conditional GAN's output, cycle GAN's output , SpA GAN's output, ground truth.
 
 <div align="center"><img src="./readme_images/rice1_result.png"></div>
+
 **quantitative analysis**
 
 |               |  PSNR  | SSIM  |
@@ -115,6 +124,7 @@ The result are shown as bellow and the images from left to right are: cloudy ima
 The result are shown as bellow and the images from left to right are: cloudy image, conditional GAN's output, cycle GAN's output , SpA GAN's output, ground truth.
 
 <div align="center"><img src="./readme_images/rice2_result.png"></div>
+
 **quantitative analysis**
 
 |               |  PSNR  | SSIM  |
