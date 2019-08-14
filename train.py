@@ -170,7 +170,7 @@ def train(config):
 
 if __name__ == '__main__':
     with open('config.yml', 'r', encoding='UTF-8') as f:
-        config = yaml.load(f)
+        config = yaml.load(f, Loader=yaml.FullLoader)
     config = AttrMap(config)
 
     utils.make_manager()
