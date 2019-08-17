@@ -21,7 +21,6 @@ def test(config, test_data_loader, gen, criterionMSE, epoch):
         if epoch % config.snapshot_interval == 0:
             h = 1
             w = 3
-            if config.out_ch ==4: w = 4
             c = 3
             width = config.width
             height = config.height
@@ -32,14 +31,10 @@ def test(config, test_data_loader, gen, criterionMSE, epoch):
             out_ = out.cpu().numpy()[0]
             in_rgb = x_[:3]
             t_rgb = t_[:3]
-            out_rgb = np.clip(out_[:3], -1, 1)
-            allim[0, 0, :] = in_rgb * 127.5 + 127.5
-            allim[0, 1, :] = out_rgb * 127.5 + 127.5
-            allim[0, 2, :] = t_rgb * 127.5 + 127.5
-            
-            if config.out_ch == 4:
-                cloud = np.clip(out_[3], -1, 1)
-                allim[0, 3, :] = cloud * 127.5 + 127.5
+            out_rgb = np.clip(out_[:3], 0, 1)
+            allim[0, 0, :] = in_rgb * 255
+            allim[0, 1, :] = out_rgb * 255
+            allim[0, 2, :] = t_rgb * 255
             
             allim = allim.transpose(0, 3, 1, 4, 2)
             allim = allim.reshape((h*height, w*width, c))

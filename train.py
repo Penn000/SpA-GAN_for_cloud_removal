@@ -62,19 +62,21 @@ def train(config):
 
     real_a = torch.FloatTensor(config.batchsize, config.in_ch, config.width, config.height)
     real_b = torch.FloatTensor(config.batchsize, config.out_ch, config.width, config.height)
+    M = torch.FloatTensor(config.batchsize, config.width, config.height)
 
     criterionL1 = nn.L1Loss()
     criterionMSE = nn.MSELoss()
     criterionSoftplus = nn.Softplus()
 
     if config.cuda:
-        gen = gen.cuda(0)
-        dis = dis.cuda(0)
-        criterionL1 = criterionL1.cuda(0)
-        criterionMSE = criterionMSE.cuda(0)
-        criterionSoftplus = criterionSoftplus.cuda(0)
-        real_a = real_a.cuda(0)
-        real_b = real_b.cuda(0)
+        gen = gen.cuda()
+        dis = dis.cuda()
+        criterionL1 = criterionL1.cuda()
+        criterionMSE = criterionMSE.cuda()
+        criterionSoftplus = criterionSoftplus.cuda()
+        real_a = real_a.cuda()
+        real_b = real_b.cuda()
+        M = M.cuda()
 
     real_a = Variable(real_a)
     real_b = Variable(real_b)
@@ -88,9 +90,10 @@ def train(config):
     for epoch in range(1, config.epoch + 1):
         epoch_start_time = time.time()
         for iteration, batch in enumerate(training_data_loader, 1):
-            real_a_cpu, real_b_cpu, M = batch[0], batch[1], batch[2]
+            real_a_cpu, real_b_cpu, M_cpu = batch[0], batch[1], batch[2]
             real_a.data.resize_(real_a_cpu.size()).copy_(real_a_cpu)
             real_b.data.resize_(real_b_cpu.size()).copy_(real_b_cpu)
+            M.data.resize_(M_cpu.size()).copy_(M_cpu)
             att, fake_b = gen.forward(real_a)
 
             ################
@@ -167,7 +170,7 @@ def train(config):
 
 if __name__ == '__main__':
     with open('config.yml', 'r', encoding='UTF-8') as f:
-        config = yaml.load(f)
+        config = yaml.load(f, Loader=yaml.FullLoader)
     config = AttrMap(config)
 
     utils.make_manager()

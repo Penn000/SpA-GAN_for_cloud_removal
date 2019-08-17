@@ -1,4 +1,15 @@
-# *SpA GAN* for cloud removal
+<div align="center">
+<h1>SpA GAN for Cloud Removal</h1>
+</div>
+
+<div align="center">
+<img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/Penn000/SpA-GAN_for_cloud_removal?color=green"> <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/Penn000/SpA-GAN_for_cloud_removal">  <img alt="GitHub issues" src="https://img.shields.io/github/issues/Penn000/SpA-GAN_for_cloud_removal"> <img alt="GitHub closed issues" src="https://img.shields.io/github/issues-closed/Penn000/SpA-GAN_for_cloud_removal?color=red">
+</div>
+<div align="center">
+<img alt="GitHub watchers" src="https://img.shields.io/github/watchers/Penn000/SpA-GAN_for_cloud_removal?style=social"> <img alt="GitHub stars" src="https://img.shields.io/github/stars/Penn000/SpA-GAN_for_cloud_removal?style=social"> <img alt="GitHub forks" src="https://img.shields.io/github/forks/Penn000/SpA-GAN_for_cloud_removal?style=social">
+</div>
+
+
 
 ## 1. INTRODUCTION
 
@@ -8,27 +19,31 @@ This is the source code of my graduation thesis named ***Cloud Removal for High-
 
 *SpA GAN* uses *spatial attention networks* an generator. See `./models/gen/SPANet.py` for more details.
 
-![SPANet](./readme_images/SPANet.jpg)
+<div align="center"><img src="./readme_images/SPANet.jpg"></div>
 
 - **Discriminator**
 
 Discriminator is a fully  CNN that **C** is convolution layer, **B** is batch normalization and **R** is Leaky ReLU. See `./models/dis/dis.py` for more details.
 
-![dis](./readme_images/dis.jpg)
+<div align="center"><img src="./readme_images/dis.jpg"></div>
 
 - **Loss**
 
 The total loss of *SpA GAN* is formulated as fellow:
 
-![loss_spa-gan](./readme_images/loss_spagan.png)
+<div align="center"><img src="./readme_images/loss_spagan.png"></div>
 
-and
+the first part is the loss of GAN
 
-![loss_cgan](./readme_images/loss_cgan.png)
+<div align="center"><img src="./readme_images/loss_cgan.png"></div>
 
-![loss_l1](./readme_images/loss_l1.png)
+the second part is standard $L_1$ loss where $\lambda_c$ is a hyper parameter to control the weight of each channel to the loss.
 
-![loss_att](./readme_images/loss_att.png)
+<div align="center"><img src="./readme_images/loss_l1.png"></div>
+
+the third part is attention loss where $A$ is the attention map and $M$ is the mask of cloud.
+
+<div align="center"><img src="./readme_images/loss_att.png"></div>
 
 ## 2. DATASET
 
@@ -74,16 +89,55 @@ python train.py
 python predict.py --config <path_to_config.yml_in_the_out_dir> --test_dir <path_to_a_directory_stored_test_data> --out_dir <path_to_an_output_directory> --pretrained <path_to_a_pretrained_model> --cuda
 ```
 
-## 5. RESULTS
+There're my pre-trained models on [RICE1](./pretrained_models/RICE1/)(`./pretrained_models/RICE1/gen_model_epoch_200.pth`) and [RICE2]((./pretrained_models/RICE1/))(`./pretrained_models/RICE2/gen_model_epoch_200.pth`).
 
 Some results are shown as bellow and the images from left to right are: cloudy image, attention map, SpA GAN's output, ground truth.
 
-![test_0000](./readme_images/test_0000.png)
+<div align="center"><img src="./readme_images/test_0000.png"></div>
 
-![test_0026](./readme_images/test_0026.png)
+<div align="center"><img src="./readme_images/test_0026.png"></div>
+
+## 5. EXPERIMENTS
+
+In this section, I compares *SpA GAN* with *conditional GAN* and *cycle GAN* using peak signal to noise ratio (***PSNR***) and structural similarity index (***SSIM***) as metrics on datasets RICE1 and RICE2.
+
+### 5.1 RICE1
+
+**qualitative analysis**
+
+The result are shown as bellow and the images from left to right are: cloudy image, conditional GAN's output, cycle GAN's output , SpA GAN's output, ground truth.
+
+<div align="center"><img src="./readme_images/rice1_result.png"></div>
+
+**quantitative analysis**
+
+|               |  PSNR  | SSIM  |
+| :-----------: | :----: | :---: |
+|   **cGAN**    | 26.547 | 0.903 |
+| **cycle GAN** | 25.880 | 0.893 |
+|  **SpA GAN**  | 30.232 | 0.954 |
+
+### 5.1 RICE2
+
+**qualitative analysis**
+
+The result are shown as bellow and the images from left to right are: cloudy image, conditional GAN's output, cycle GAN's output , SpA GAN's output, ground truth.
+
+<div align="center"><img src="./readme_images/rice2_result.png"></div>
+
+**quantitative analysis**
+
+|               |  PSNR  | SSIM  |
+| :-----------: | :----: | :---: |
+|   **cGAN**    | 25.384 | 0.811 |
+| **cycle GAN** | 23.910 | 0.793 |
+|  **SpA GAN**  | 28.368 | 0.906 |
 
 ## 6. CONTACT
 
 Contact me if you have any questions about the code and its execution.
 
-E-mail: poonhang96@gmail.com
+E-mail: penn000@foxmail.com
+
+- Note: because the paper of this work is not yet released, if you think this work is helpful for your research, give me a star :-D
+

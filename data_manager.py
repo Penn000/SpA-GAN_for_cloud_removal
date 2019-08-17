@@ -33,8 +33,8 @@ class TrainDataset(data.Dataset):
         x = cv2.imread(os.path.join(self.config.datasets_dir, 'cloudy_image', str(self.imlist[index])), 1).astype(np.float32)
 
         M = np.clip((t-x).sum(axis=2), 0, 1).astype(np.float32)
-        x = x / 127.5 - 1
-        t = t / 127.5 - 1
+        x = x / 255
+        t = t / 255
         x = x.transpose(2, 0, 1)
         t = t.transpose(2, 0, 1)
 
@@ -57,7 +57,7 @@ class TestDataset(data.Dataset):
         
         x = cv2.imread(os.path.join(self.test_dir, 'cloudy_image', filename), 1).astype(np.float32)
 
-        x = x / 127.5 - 1
+        x = x / 255
 
         x = x.transpose(2, 0, 1)
 

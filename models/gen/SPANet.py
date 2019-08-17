@@ -182,7 +182,7 @@ class SPANet(nn.Module):
        
         out = self.conv_out(out)
 
-        return Attention1 , out
+        return Attention4 , out
 
 class Generator(nn.Module):
     def __init__(self, gpu_ids):
