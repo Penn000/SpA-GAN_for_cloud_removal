@@ -139,5 +139,5 @@ Contact me if you have any questions about the code and its execution.
 
 E-mail: penn000@foxmail.com
 
-- Note: because the paper of this work is not yet released, if you think this work is helpful for your research, give me a star :-D
+If you think this work is helpful for your research, give me a star :-D
 
