@@ -10,10 +10,14 @@
 </div>
 
 
+### new
+
+- 2020.9.29  The draft is released now at https://arxiv.org/abs/2009.13015.
+
 
 ## 1. INTRODUCTION
 
-This is the source code of my graduation thesis named ***Cloud Removal for High-resolution Remote Sensing Imagery based on Generative Adversarial Networks***. In this work, I proposed a novel model called ***spatial attention generative adversarial networks*** or ***SpA GAN***, which use [spatial attention networks (SPANet)](https://github.com/stevewongv/SPANet) as generator. The architecture of *SpA GAN* is shown as fellow:
+This is the source code of [***Cloud Removal for Remote Sensing Imagery via Spatial Attention Generative Adversarial Network***](https://arxiv.org/abs/2009.13015). In this work, I proposes a novel cloud removal model called ***spatial attention generative adversarial networks*** or ***SpA GAN***, which use [spatial attention networks (SPANet)](https://github.com/stevewongv/SPANet) as generator. The architecture of *SpA GAN* is shown as fellow:
 
 - **Generator**
 
@@ -140,4 +144,17 @@ Contact me if you have any questions about the code and its execution.
 E-mail: penn000@foxmail.com
 
 If you think this work is helpful for your research, give me a star :-D
+
+### Citations
+
+```
+@article{Pan2020,
+  title   = {Cloud Removal for Remote Sensing Imagery via Spatial Attention Generative Adversarial Network},
+  author  = {Heng Pan},
+  journal = {arXiv preprint arXiv:2009.13015},
+  year    = {2020}
+}
+```
+
+
 
