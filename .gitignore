@@ -4,6 +4,8 @@ results/
 data/
 .vscode/
 .job/
+output/
+test_images/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
