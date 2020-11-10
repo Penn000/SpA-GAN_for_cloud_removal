@@ -45,7 +45,7 @@ the second part is standard $L_1$ loss where $\lambda_c$ is a hyper parameter to
 
 <div align="center"><img src="./readme_images/loss_l1.png"></div>
 
-the third part is attention loss where $A$ is the attention map and $M$ is the mask of cloud that computed from $M=|I_{input}-I_{output}|_1$.
+the third part is attention loss where $A$ is the attention map and $M$ is the mask of cloud that computed from $M=|I_{in}-I_{gt}|_1$.
 
 <div align="center"><img src="./readme_images/loss_att.png"></div>
 
