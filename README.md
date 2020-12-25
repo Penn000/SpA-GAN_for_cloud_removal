@@ -53,7 +53,7 @@ the third part is attention loss where $A$ is the attention map and $M$ is the m
 
 ### 2.1. RICE_DATASET
 
-Click [here](https://github.com/BUPTLdy/RICE_DATASET) to download the open source RICE dataset. Build the file structure as the folder `data` shown. Here `cloudy_image` is the folder where the cloudy image is stored and the folder `ground_truth` stores the corresponding cloudless images.
+Click [official address](https://github.com/BUPTLdy/RICE_DATASET) or [Google Drive](https://drive.google.com/file/d/1Tsm9qEugNyDKLe4bu06e-2IqEhENu64D/view?usp=sharing) to download the open source RICE dataset. Build the file structure as the folder `data` shown. Here `cloudy_image` is the folder where the cloudy image is stored and the folder `ground_truth` stores the corresponding cloudless images.
 
 ```
 ./
