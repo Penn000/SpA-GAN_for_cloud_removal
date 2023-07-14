@@ -143,8 +143,6 @@ Contact me if you have any questions about the code and its execution.
 
 E-mail: penn000@foxmail.com
 
-If you think this work is helpful for your research, give me a star :-D
-
 ### Citations
 
 ```
